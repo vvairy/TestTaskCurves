@@ -4,7 +4,6 @@
 #include <array>
 #include "figure.h"
 
-
 class Circle : public Figure
 {
 public:
@@ -12,5 +11,6 @@ public:
     double Derivative(double t) override;
     std::array<double, 3> VectorOfDerivative(double t) override;
     double r;
+private:
     Dot dot;
 };

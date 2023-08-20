@@ -8,6 +8,7 @@ public:
     Spiral(double r, double t);
     double Derivative(double t) override;
     std::array<double, 3> VectorOfDerivative(double t) override;
-    Dot dot;
     double r;
+private:
+    Dot dot;
 };
