@@ -11,5 +11,4 @@ public:
     double r;
 private:
     Dot dot;
-    double r;
 };
