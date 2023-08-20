@@ -19,7 +19,7 @@ struct Dot
 
 class Figure
 {
-public:
+protected:
     virtual double Derivative(double t) = 0;
 
     virtual std::array<double, 3> VectorOfDerivative(double t) = 0;

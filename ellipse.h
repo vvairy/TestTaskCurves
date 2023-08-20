@@ -10,5 +10,6 @@ public:
     double Derivative(double t) override;
     std::array<double, 3> VectorOfDerivative(double t) override;
     double a, b;
+private:
     Dot dot;
 };
