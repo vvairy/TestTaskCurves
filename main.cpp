@@ -17,17 +17,17 @@ std::shared_ptr<Figure> takeRandomCurve()
     {
     case 0:
     {
-        std::shared_ptr<Circle> circle(new Circle(1 + rand() % 10, PI / 4));
+        auto circle = std::make_shared<Circle>(1 + rand() % 10, PI / 4);
         return circle;
     }
     case 1:
     {
-        std::shared_ptr<Ellipse> ellipse(new Ellipse(1 + rand() % 10, 10 + rand() % 10, PI / 4));
+        auto ellipse = std::make_shared<Ellipse>(1 + rand() % 10, 11 + rand() % 10, PI / 4);
         return ellipse;
     }
     case 2:
     {
-        std::shared_ptr<Spiral> spiral(new Spiral(1 + rand() % 10, PI / 4));
+        auto spiral = std::make_shared<Spiral>(1 + rand() % 10, PI / 4);
         return spiral;
     }
     }
@@ -46,7 +46,7 @@ int main()
     for (int i = 0; i < 30; ++i)
         figures.push_back(takeRandomCurve());
     for (std::shared_ptr<Figure> figure : figures)
-        if (std::dynamic_pointer_cast<Circle>(figure)) //returns nullptr(which converts to false) if it is circle
+        if (std::dynamic_pointer_cast<Circle>(figure)) 
             circles.push_back(std::static_pointer_cast<Circle>(figure));
     std::sort(circles.begin(), circles.end(), compareRadiuses);
     std::cout << "Sorted Radiuses:\n";
